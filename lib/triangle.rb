@@ -21,11 +21,7 @@ class Triangle
     triangle = [(a+b>c), (a+c>b), (b+c>a)]
     [a, b, c].each do |side|
       triangle << false if side <= 0
-      begin
-        raise TriangleError if triangle.include?(false)
-      rescue TriangleError => error
-        puts error.message
-      end
+      raise TriangleError if triangle.include?(false)
     end
   end
 
