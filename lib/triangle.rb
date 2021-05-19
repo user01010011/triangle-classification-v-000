@@ -1,16 +1,16 @@
 class Triangle
   attr_reader :a, :b, :c
   def initialize(a, b, c)
-    @a = a 
-    @b = b 
-    @c = c 
-  end 
+    @a = a
+    @b = b
+    @c = c
+  end
 
   def kind
     valid_triangle?
-    if a == b && b == c 
+    if a == b && b == c
       :equilateral
-    elsif a = b || b == c || a == c 
+    elsif a = b || b == c || a == c
       :isosceles
     else
       :scalene
@@ -26,9 +26,9 @@ class Triangle
       rescue TriangleError => error
         puts error.message
       end
-    end 
+    end
 
   class TriangleError < StandardError
     "This is not a triangle."
-  end 
+  end
 end
